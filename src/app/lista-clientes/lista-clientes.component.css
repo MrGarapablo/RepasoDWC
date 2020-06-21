@@ -1,0 +1,21 @@
+.headers {
+    font-weight: bold;
+    border-bottom: 1px solid #CCC;
+    border-top: 1px solid #CCC;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.impar{
+    padding: 5px;
+}
+
+.impar:nth-child(odd) {
+    background: #EEE;
+}
+
+.nuevo{
+    border-top: 1px solid #CCC;
+    padding: 5px;
+    margin-bottom: 5px;
+}

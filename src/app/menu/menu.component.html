@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-center text-center">
+    <button class="btn btn-sm mr-1" [ngClass]="{'btn-danger': verClientes, 'btn-primary': !verClientes}" (click)="cambiarModulo('cliente')">Ver clientes</button>
+    <button class="btn btn-sm mr-1" [ngClass]="{'btn-danger': verPedidos, 'btn-primary': !verPedidos}" (click)="cambiarModulo('pedidos')">Ver pedidos</button>
+    <button class="btn btn-sm mr-1" [ngClass]="{'btn-danger': verProductos, 'btn-primary': !verProductos}" (click)="cambiarModulo('productos')">Ver productos</button>
+</div>

@@ -1,0 +1,46 @@
+<div class="modal fade" id="nuevoUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closebutton>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="creoCliente()">
+                    <div class="form-group">
+                        <label for="dniCliente">DNI del cliente</label>
+                        <input type="text" class="form-control" id="dniCliente" placeholder="" name="dni"
+                            [(ngModel)]="nuevoCliente.dniCliente" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreCliente">Nombre del cliente</label>
+                        <input type="text" class="form-control" id="nombreCliente" placeholder="" name="nom"
+                            [(ngModel)]="nuevoCliente.nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="dirCliente">Dirección de envío</label>
+                        <input type="text" class="form-control" id="dirCliente" placeholder="" name="dir"
+                            [(ngModel)]="nuevoCliente.direccion">
+                    </div>
+                    <div class="form-group">
+                        <label for="mailCliente">Dirección de correo electrónico</label>
+                        <input type="email" class="form-control" id="mailCliente" placeholder="" name="mail"
+                            [(ngModel)]="nuevoCliente.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="passCliente">Contraseña</label>
+                        <input type="password" class="form-control" id="passCliente" placeholder="" name="pwd"
+                            [(ngModel)]="nuevoCliente.pwd">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Crear nuevo cliente</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

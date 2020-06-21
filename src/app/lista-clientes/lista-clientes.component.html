@@ -1,0 +1,39 @@
+<div class="card-block">
+    <form class="form">
+        <div class="form-group row">
+            <label class="col-form-label col-sm-2 text-sm-right" for="filterDesc">Filtro:</label>
+            <div class="col-sm-5">
+                <input type="text" [(ngModel)]="filtroBusqueda" class="form-control" name="filterDesc" id="filterDesc"
+                    placeholder="Introduzca nombre del cliente">
+            </div>
+            <label class="col-form-label col-sm-5">
+                Filtrando por: {{filtroBusqueda}}</label>
+        </div>
+    </form>
+</div>
+
+<div class="row headers no-gutters">
+    <div class="col">{{headers.nom}}</div>
+    <div class="col">{{headers.dni}}</div>
+    <div class="col">{{headers.dir}}</div>
+    <div class="col">{{headers.mail}}</div>
+    <div class="col">{{headers.gest}}</div>
+</div>
+<div *ngFor="let cliente of clientes | filtroClientes:filtroBusqueda" class="row no-gutters impar">
+    <div class="col">{{ cliente.nombre }}</div>
+    <div class="col">{{ cliente.dniCliente }}</div>
+    <div class="col">{{ cliente.direccion }}</div>
+    <div class="col">{{ cliente.email }}</div>
+    <div class="col">
+        <button class="btn btn-sm mr-1 btn-primary" (click)="editarCliente(cliente)" data-toggle="modal" data-target="#editarUsuario">Editar</button>
+        <button class="btn btn-sm mr-1 btn-danger" (click)="eliminoCliente(cliente.dniCliente)">Eliminar</button>
+    </div>
+</div>
+<div class="nuevo">
+    <button class="btn btn-sm mr-1 btn-primary" data-toggle="modal" data-target="#nuevoUsuario">Añadir nuevo cliente</button>
+</div>
+
+<!-- Modales -->
+
+<modal-nuevo-usuario (recargoEvent)="cargoClientes()"></modal-nuevo-usuario>
+<modal-editar-usuario (recargoEvent)="cargoClientes()" [editCliente]="pasoCliente"></modal-editar-usuario>
